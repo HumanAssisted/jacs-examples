@@ -1,0 +1,207 @@
+{
+  "$schema": "https://hai.ai/schemas/header/v1/header.schema.json",
+  "agentSignature": {
+    "agentID": "fe00bb15-8c7f-43ac-9413-5a7bd5bb039d",
+    "agentVersion": "1f639f69-b3a7-45d5-b814-bc7b91fb3b97",
+    "date": "2024-04-07T09:01:49.317714+00:00",
+    "fields": [
+      "$schema",
+      "components",
+      "id",
+      "info",
+      "openapi",
+      "originalDate",
+      "originalVersion",
+      "paths",
+      "servers",
+      "version",
+      "versionDate"
+    ],
+    "publicKeyHash": "8878ef8b8eae9420475f692f75bce9b6a0512c4d91e4674ae21330394539c5e6",
+    "signature": "EirTxg29W7dhIDcqqKaW1jQMuB8aAzxFRo1Nx5iv/9fcy2TTkEUpWrMVsjmNxRyBHZvHo4VFZ3s8r0+FIX5+MwICTbFkjLzfQ+BLml2ROtA/PCHBi0Tog4ji+OFzS0rxwpKAW7owprsMFotAPNSXcMlY3JPcMLO0kdOJcvnUFRBtUyOil0u7W0WKgCjHpprPI0xXVHKha3sVEn160viWzdIqLiaWe3lkLyxJClXDxBnvteWqF1ycfUTL2pCqoxAF51QvhTvDSQ+a9alBfBCthJ7zklK0I7aGcrih+OfJZ2JvLqIGH1fjVUYfiqxZ0RHbwpLnRj1bRvvF40y6Lnl1+J7SKTlx01tJ9ZhV40GA3d6h6iPee9lIx6yEAeHa6BXs5qm3thvx6JzofKus6yqJmGfcxvTJVaAwKoZJ8a3jMb41vLav73/DWAJHqxiBYIORYBII3oj+93rtOccvPTRwCQOeaDdAGKsdxxvYy6DD1C2+Uvbptas7eBngrrZMkP4Hrv0esKTq5kneMNR+l1wD9NsONNel7CMKa3lLkiRNnPngA6QQR63Dv/1+p5r/KjcTBJm/4uluhqgeQU0XtVGePr4VZntgRoK3OlQTaWRSakyLTyZMx7MZ9Bt79klzbaGYj8ZieKWeQfF9/W0rSAYw8QqWsHtcEd/llq+R5/GwXOg=",
+    "signing_algorithm": "RSA-PSS"
+  },
+  "components": {
+    "schemas": {
+      "Article": {
+        "properties": {
+          "authorId": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "publishedAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "content",
+          "authorId"
+        ],
+        "type": "object"
+      },
+      "NewUser": {
+        "example": {
+          "age": 28,
+          "email": "jane.doe@example.com",
+          "name": "Jane Doe"
+        },
+        "properties": {
+          "age": {
+            "format": "int32",
+            "minimum": 18,
+            "type": "integer"
+          },
+          "email": {
+            "format": "email",
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "email"
+        ],
+        "type": "object"
+      },
+      "User": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/NewUser"
+          },
+          {
+            "properties": {
+              "createdAt": {
+                "format": "date-time",
+                "type": "string"
+              },
+              "id": {
+                "format": "uuid",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        ],
+        "type": "object"
+      },
+      "UserArray": {
+        "items": {
+          "$ref": "#/components/schemas/User"
+        },
+        "type": "array"
+      }
+    }
+  },
+  "id": "bd610b74-2650-441f-9331-220ac093afb3",
+  "info": {
+    "description": "API to demonstrate advanced OpenAPI Specification features.",
+    "title": "Advanced User and Article Management API",
+    "version": "2.0.0"
+  },
+  "openapi": "3.0.3",
+  "originalDate": "2024-04-07T09:01:49.300520+00:00",
+  "originalVersion": "e25c3c56-f811-4399-bd4c-72bb29117e41",
+  "paths": {
+    "/users": {
+      "get": {
+        "operationId": "listUsers",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserArray"
+                }
+              }
+            },
+            "description": "A list of users."
+          }
+        },
+        "summary": "Lists all users",
+        "tags": [
+          "User Operations"
+        ]
+      },
+      "post": {
+        "operationId": "createUser",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewUser"
+              }
+            }
+          },
+          "description": "User to add",
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "User created successfully."
+          }
+        },
+        "summary": "Create a new user",
+        "tags": [
+          "User Operations"
+        ]
+      }
+    },
+    "/users/{userId}/articles": {
+      "get": {
+        "operationId": "listUserArticles",
+        "parameters": [
+          {
+            "description": "The id of the user to retrieve articles for",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Article"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "An array of articles."
+          }
+        },
+        "summary": "Lists all articles for a given user",
+        "tags": [
+          "Article Operations"
+        ]
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.advancedexample.com/v2"
+    }
+  ],
+  "sha256": "76f7a1e984f6b317da3756c11689949ace06213c06dd2b53c820ab745d8b8527",
+  "version": "e25c3c56-f811-4399-bd4c-72bb29117e41",
+  "versionDate": "2024-04-07T09:01:49.300520+00:00"
+}

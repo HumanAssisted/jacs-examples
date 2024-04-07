@@ -1,0 +1,80 @@
+{
+  "$schema": "https://hai.ai/schemas/header/v1/header.schema.json",
+  "agentSignature": {
+    "agentID": "fe00bb15-8c7f-43ac-9413-5a7bd5bb039d",
+    "agentVersion": "1f639f69-b3a7-45d5-b814-bc7b91fb3b97",
+    "date": "2024-04-07T09:01:41.018610+00:00",
+    "fields": [
+      "$schema",
+      "components",
+      "id",
+      "info",
+      "openapi",
+      "originalDate",
+      "originalVersion",
+      "paths",
+      "servers",
+      "version",
+      "versionDate"
+    ],
+    "publicKeyHash": "8878ef8b8eae9420475f692f75bce9b6a0512c4d91e4674ae21330394539c5e6",
+    "signature": "XaaWMlU7+eI6oRkzH7h45gIgsPu27XWDzd0grCwzSQ+3RiakRtxozOoMGpcS0vRTvOknhp/ukz2+oY8uRZoAXTGLQTsSlbcityHZP5qdgNOBJ/tZ1dfJ6Ucl2AHh1kdZi9X6shSLHnJ0Bh5E4QdNCi88d7Wv3dkTeIY2GRuc9u4PmmXUOyjdslnoaiOVbLFoNTE21ix9oml2tpazAZmObkrj0ZKpKiUigrUxKqM1O9iq6YBn73B9SBl+/CgjzqnvXmYQp/dPblzYtEZ7IzyDZK3paGOifav/jyoTqtw4UysRSO2ePwKeH4v4Lmz2sNgHfR4N2iBO2fspL2Qmb3OYj0HTFH5aLmSDvnmAEkjBFR/mBAXK+Nb7bdzYrrh72dDPc1wMr8hs/Zvr3EgK1f97D6Hw8+u68K7LR7LMWJufrWtY5WSbjwzgheN1AKFScaiymQXynQqJlYebKYIf3ABsJTgyJ4bZJL2MTxguWXDZ02FkKGuzgWzXPVPhxETeZ8xPDU9SGX8tq+3Q4VODf+LXgGOD3pVC1pzhTMa+j0hvM1UvST4MZ8joaQawaHnwxkB+yWJvmAn4zmPHT0/QAHrKEnEB7U2SG1l0I23szplZ7MV53F82T4cDb8IExbLwXk2VCYzxXdCU9Ihaj7bzNM2YlfpVsQ5QiCTtuPgFyZFkJAc=",
+    "signing_algorithm": "RSA-PSS"
+  },
+  "components": {
+    "schemas": {
+      "Book": {
+        "properties": {
+          "author": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      }
+    }
+  },
+  "id": "29087aac-2b0d-4505-a4e1-d0b4386bca5e",
+  "info": {
+    "title": "Books API",
+    "version": "1.0.0"
+  },
+  "openapi": "3.0.0",
+  "originalDate": "2024-04-07T09:01:41.002277+00:00",
+  "originalVersion": "9e60980a-4b61-4abe-bb7f-85116ad7796f",
+  "paths": {
+    "/books": {
+      "get": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Book"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "A list of books."
+          }
+        },
+        "summary": "Lists all books"
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://api.example.com/v1"
+    }
+  ],
+  "sha256": "85ae8df85f094f4db6d7429a9598fb291c47e29e2ef64a95a915cede26011d25",
+  "version": "9e60980a-4b61-4abe-bb7f-85116ad7796f",
+  "versionDate": "2024-04-07T09:01:41.002277+00:00"
+}
