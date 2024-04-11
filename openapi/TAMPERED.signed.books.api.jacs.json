@@ -1,0 +1,34 @@
+{
+  "$schema": "https://hai.ai/schemas/header/v1/header.schema.json",
+  "jacsAgentSignature": {
+    "agentID": "37e6b2e0-5100-4eb7-b042-2630beaa8531",
+    "agentVersion": "c46c4cdc-3abc-4e0d-a60f-e6dcbc6daad3",
+    "date": "2024-05-11T09:38:45.141507+00:00",
+    "fields": [
+      "$schema",
+      "jacsFiles",
+      "jacsId",
+      "jacsOriginalDate",
+      "jacsOriginalVersion",
+      "jacsVersion",
+      "jacsVersionDate"
+    ],
+    "publicKeyHash": "8878ef8b8eae9420475f692f75bce9b6a0512c4d91e4674ae21330394539c5e6",
+    "signature": "V/2shSkdR/Bmj9scrWO78Im6UIZtYZKXwVETG5Y2Oi7ClNipZ/yZOj8IqenSNU2gVaG0SI2ptdmAI5U+4YgQPTW8WffP1HogLmNxp945484O3RQwYofN0KbJWAi3Rsk+Na1Z0fA5wWMwPTBu1fZVRsLBzu8rAd1WwFJlg0Y4Wtj+x1HRWj6eds2fli/GsnU13DRckz1TGLjfO3XFuv7ewc9kM/MVY65vd1YbZ1a9NEFKjNd1Pn6O1wXdXIwFyVz2qS0Gg1cdguI8O5T0nkuGblt6babGmDef7paaBQhbJgtzjH8z81lciOzbAGnIJqIm7kBFOGeQlCOEUMOjsw7xL7wFs3yUg+X7z3ebc+lIrbso528lVxd+0yh/hoqNOBosGCaEHtpxrRffhcjhQTaT1xLjtiGj7MRoNmfZbkgcwSIWzWycnEcog7wOkm5LvGlXk5zfjEux45dYWb2xtkpIEO8jmPF+YHihrIdpsKJ4hBn88SQ51iArgHiiacaNHvWz6HmetWWcI8lopwPVf0rl5MOYximekf63XsIpV6lwQ6vaal8TdjD/PVd1+EUNNxXpCM1wBBAkb8EWzKhPjuvrAkidu0aypuVT7ZOGA1s90pohJjmZ+b4k96j96dCejbbXfmbpP9bYbcaTcY8JnZ6F+VVJC13FpC1C5OPuF4dWim8=",
+    "signing_algorithm": "RSA-PSS"
+  },
+  "jacsFiles": [
+    {
+      "embed": false,
+      "mimetype": "application/json",
+      "path": "books.api.json",
+      "sha256": "8c4c679dc97e94004cd81d8727c823a19eef76557560e049139ec1625dbd5155"
+    }
+  ],
+  "jacsId": "d0101720-a694-448d-af1e-0ad050530a04",
+  "jacsOriginalDate": "2024-04-11T09:38:45.128283+00:00",
+  "jacsOriginalVersion": "9e5003a8-f0f4-4bf3-8d50-b103d15e02df",
+  "jacsSha256": "d2354648bc5b1c3482c21951f86d98b4fa0f71792160071b12b316e95e5cc4db",
+  "jacsVersion": "9e5003a8-f0f4-4bf3-8d50-b103d15e02df",
+  "jacsVersionDate": "2024-04-11T09:38:45.128283+00:00"
+}
