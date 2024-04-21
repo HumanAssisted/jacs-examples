@@ -1,0 +1,6 @@
+{
+  "$schema": "https://hai.ai/schemas/agent/v1/agent-schema.json",
+  "name": "Agent Smith",
+  "jacsAgentType": "ai",
+  "description": "Helpful agent with some control issues."
+}
